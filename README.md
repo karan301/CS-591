@@ -5,6 +5,7 @@ Check out the README files in each subdirectory for more detail.
 
 ## Contents
 * hw1
+* hw2
 
 ----
-_Updated on June 6, 2017 by Karan Varindani._
+_Updated on June 8, 2017 by Karan Varindani._
