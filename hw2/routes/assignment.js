@@ -1,10 +1,28 @@
 const express = require('express')
 const router = express.Router()
 
-// Test Method
-router.get('/', function(req, res, next) {
-  res.send('Testing');
-});
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/sample/food/')
+const db = mongoose.connection
+db.once('open', function () {
+  console.log('Connection successful.')
+})
+
+const Schema = mongoose.Schema
+const stringSchema = new Schema({
+    name: String,
+    length: String
+})
+const len = mongoose.model('len', stringSchema)
+
+
+//GET Fetch all users
+router.get('/db', function (req, res, next) {
+  len.find({}, function (err, results) {
+    res.json(results);
+  })
+
+})
 
 // GET Method
 router.get('/:name', function (req, res, next) {
