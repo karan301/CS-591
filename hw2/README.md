@@ -1,11 +1,6 @@
 # Homework 2
 _Due on June 13, 2017._
 
-## To-do
-* Actually do the assignment.
-* Update `Usage` section.
-* Upload `hw2.pdf`.
-
 ## Notes
 * I added `node_modules/` to `.gitignore` so use `npm install` before testing.
 * Files modified: `app.js`, `routes/assignment.js`.
