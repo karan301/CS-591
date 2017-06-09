@@ -10,8 +10,9 @@ Check out the README files in each subdirectory for more detail.
 * hw2
 
 ### Project
-* overview
-  * test
+* Overview
+* Deliverables
+  * Assignment 1
 
 ----
-_Updated on June 8, 2017 by Karan Varindani._
+_Updated on June 9, 2017 by Karan Varindani._
