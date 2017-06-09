@@ -37,14 +37,14 @@ router.get('/', function (req, res, next) {
 // GET -- findOne, or add new string
 router.get('/:_name', function (req, res, next) {
     let name = req.params._name
+
     len.findOne({name: name}, function (err, result) {
-	console.log(result)
 	if(result == null) {
 	    const aString = new len ( {name: name, length: name.length})
 	    aString.save(function(err) {
 		if (err) {res.send(err)}
 		else {res.send (aString)}
-    })
+	    })
 	}
 	else {res.json(result)}
   })
@@ -60,7 +60,7 @@ router.post('/', function(req, res, next) {
             aString.save(function(err) {
                 if (err) {res.send(err)}
                 else {res.send (aString)}
-    })
+	    })
         }
         else {res.json(result)}
     })
@@ -68,14 +68,18 @@ router.post('/', function(req, res, next) {
 
 // DELETE -- findOneAndRemove, or return error
 router.delete('/:_name', function (req, res, next) {
-    len.findOneAndRemove(req.params._name, function (err, result) {
-	if (result == null) {
-	    res.json({message: 'String not found.'})
+    let name = req.params._name
+    
+    len.findOne({name: name}, function (err, result) {
+	if(result == null) {
+            res.json({message: 'String not found.'})
+        }
+        else {
+	    len.findOneAndRemove(name, function (err, result) {
+		res.json({message: 'Success.'})
+	    })
 	}
-	else {
-	    res.json({message: 'Success'})
-	}
-    })
+  })
 })
 
 module.exports = router;
