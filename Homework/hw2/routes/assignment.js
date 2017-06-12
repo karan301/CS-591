@@ -11,7 +11,7 @@ const router = express.Router()
 
 // Initiate mongoose connection
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/cs591/hw2/')
+mongoose.connect('mongodb://localhost/cs591/')
 const db = mongoose.connection
 db.once('open', function () {
   console.log('Connection successful.')
@@ -73,9 +73,9 @@ router.delete('/:_name', function (req, res, next) {
     len.findOne({name: name}, function (err, result) {
 	if(result == null) {
             res.json({message: 'String not found.'})
-        }
-        else {
-	    len.findOneAndRemove(name, function (err, result) {
+    }
+    else {
+	    len.findOneAndRemove({name:name}, function (err, result) {
 		res.json({message: 'Success.'})
 	    })
 	}
