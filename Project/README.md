@@ -1,9 +1,14 @@
 # Project Overview
 
-_Come up with an actual idea..._
+My project uses Amazon's _[RecognizeCelebrities](http://docs.aws.amazon.com/rekognition/latest/dg/API_RecognizeCelebrities.html)_ API[^1] to take in a picture of a celebrity and queries it against the _[The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api)_ API to return a list of movies that they've been in (or an error if the celebrity isn't an actor/actress). 
+
+The user would need to authenticate with Twitter or Facebook to use the app, and can choose to save their search results in our database. 
 
 ## APIs Used
-You tell me. ¯\_(ツ)_/¯ 
+* [RecognizeCelebrities](http://docs.aws.amazon.com/rekognition/latest/dg/API_RecognizeCelebrities.html)
+* [The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api) 
 
 ----
-_Updated on June 8, 2017 by Karan Varindani._
+_Updated on June 18, 2017 by Karan Varindani._
+
+[^1]:	Part of the [Amazon Rekognition](https://aws.amazon.com/documentation/rekognition/) package.
