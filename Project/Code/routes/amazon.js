@@ -38,22 +38,16 @@ router.get('/', function(req, res, next) {
   rekognition.recognizeCelebrities(params, function (err, data) {
 	if (err) console.log(err, err.stack);
 	else {
-		//console.log(data);
-		name = data.CelebrityFaces[0].Name;
-		console.log(name);
+		name = data.CelebrityFaces[0].Name; // Pulls celebrity name from response
+		id = data.CelebrityFaces[0].Urls[0].match(/nm(.*)/)[0]; // Pulls IMDB ID using RegEx
+		
 		const newCeleb = new celeb ({name: name});
 		newCeleb.save(function(err) {
 			if (err) {res.send(err)}
 			else {res.send (newCeleb)}
-	    });
-		res.json(data);	
+	    });	
 	} 
 	});
 });
-
-/* rekognition.recognizeCelebrities(params, function (err, data) {
-	if (err) console.log(err, err.stack);
-	else console.log(data);
-}); */
 
 module.exports = router;
