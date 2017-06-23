@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+.largeText {
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+
+}

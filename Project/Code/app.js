@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var amazon = require('./routes/amazon');
 var tmdb = require('./routes/tmdb');
+var playground = require('./routes/playground');
 
 var app = express();
 
@@ -22,8 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', amazon);
+app.use('/amazon', amazon);
 app.use('/imdb', tmdb);
+app.use('/test', playground);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

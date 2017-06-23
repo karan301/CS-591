@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.20.min.js"></script>
+    <script src="javascripts/upload.js"></script>
+    <script>
+       function getHtml(template) {
+          return template.join('\n');
+       }
+       listAlbums();
+    </script>
+  </head>
+  <body ng-app="cs411">>
+    <div ng-controller="cs411ctrl" ng-init="initApp()"></div>
+    <button type="submit" class="btn btn-primary" ng-disabled="inputForm.$invalid" ng-click="addPhoto()">Add Photo</button>
+  </body>
+</html>
