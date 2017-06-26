@@ -23,12 +23,14 @@ angular.module('cs591', [])
 		    };
 		    $http(downrequest)
 		    	.then(function(response) {
-		    		setTimeout(7000)
-		    		$http(uprequest)
+		    		setTimeout(function() {
+		    			$http(uprequest)
 		    			.then(function(response) {
-		    				setTimeout(7000)
-		    				$scope.getMovies()
+		    				setTimeout(function() {
+		    					$scope.getMovies()
+		    				}, 1000)
 		    			})
+		    		}, 1000)
 		    	})
         }
         
@@ -72,7 +74,6 @@ angular.module('cs591', [])
           $scope.buttonState = "create";
           $scope.h2message="Welcome to IMDB Search";
           $scope.buttonMessage = "Upload Image";
-          $scope.getMovies()
       }
     })
     //This controller handles toggling the display of details in the user list
