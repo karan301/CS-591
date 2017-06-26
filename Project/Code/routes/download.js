@@ -31,6 +31,8 @@ router.post('/', function (req, res, next) {
     	console.log('File downloaded.')
     })
     
+    res.send ('Ready to go.')
+    
 })
 
 module.exports = router;

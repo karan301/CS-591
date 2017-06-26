@@ -9,7 +9,7 @@ var amazon = require('./routes/amazon');
 var tmdb = require('./routes/tmdb');
 var download = require('./routes/download');
 var upload = require('./routes/upload');
-//var playground = require('./routes/playground');
+var database = require('./routes/database');
 
 var app = express();
 
@@ -29,7 +29,7 @@ app.use('/amazon', amazon);
 app.use('/imdb', tmdb);
 app.use('/download', download);
 app.use('/upload', upload);
-//app.use('/test', playground);
+app.use('/db', database);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
