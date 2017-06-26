@@ -16,7 +16,7 @@ var params = {
 	Image: {
 		S3Object: {
 			Bucket: 'cs591-mean',
-			Name: 'kid.JPG'
+			Name: 'utest.jpg'
 		}
 	}
 };
