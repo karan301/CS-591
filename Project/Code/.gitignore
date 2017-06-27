@@ -1,3 +1,4 @@
 # Ignore dependencies and log files
 node_modules/
 *.log
+utest.jpg
