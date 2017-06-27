@@ -84,7 +84,25 @@ angular.module('cs591', [])
           $scope.buttonState = "create";
           $scope.h2message="Welcome to IMDB Search";
           $scope.buttonMessage = "Upload Image";
+          $scope.authorized = false;
+          let authCookie = $cookies.get('authStatus') // Grab cookies if present
+          $scope.authorized = authCookie
       }
+      
+      $scope.showLoginForm = function () {
+      	$scope.showLogin = true
+      }
+      
+      $scope.doTwitterAuth = function () {
+      	var openURL = '/auth/twitter/'
+      	$scope.toggleAuth()
+      	window.location.replace(openURL)
+      }
+      
+      $scope.toggleAuth = function () {
+      	$scope.authorized = !$scope.authorized
+      }
+      
     })
     //This controller handles toggling the display of details in the user list
     .controller('listController', function ($scope){

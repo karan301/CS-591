@@ -15,10 +15,6 @@
     <script src="javascripts/logic.js"></script>
     <!-- Local styles -->
     <link rel="stylesheet" href="stylesheets/style.css">
-    <!-- ng-file-upload scripts -->
-    <script src="angular(.min).js"></script>
-	<script src="ng-file-upload-shim(.min).js"></script> 
-	<script src="ng-file-upload(.min).js"></script>
 </head>
 
 <body ng-app="cs591">
@@ -50,8 +46,14 @@
         <button type="submit" class="btn btn-primary" ng-click="viewResults()">View History</button>
         <button type="submit" class="btn btn-primary" ng-click="removeAll()">Remove Saves</button>
         </div>
-        
     </div>
+    
+	<!--
+        <div ng-hide="authorized">
+            <button type="submit" class="btn btn-primary" ng-click="doTwitterAuth()">Log in with Twitter</button>
+            <p>Login status: {{authorized}}</p>
+        </div> -->
+        
 </div>    
 </body>
 
