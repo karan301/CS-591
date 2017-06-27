@@ -28,7 +28,7 @@ router.get('/', function (req, res, next) {
 	})
 })
 
-// POST -- Add new string
+// POST -- Add new celebrity
 router.post('/', function(req, res, next) {
     let name = req.body.name
 
@@ -42,6 +42,14 @@ router.post('/', function(req, res, next) {
 		}
 		else {res.json(result)}
     })
+})
+
+// DELETE -- Remove all celebrities
+router.delete('/', function(req, res, next) {
+    celeb.remove({}, function(err) { 
+   		console.log('collection removed')
+   		res.send('Collection removed') 
+	})
 })
 
 module.exports = router;

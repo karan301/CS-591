@@ -62,12 +62,22 @@ angular.module('cs591', [])
         // Get list from Database
         $scope.viewResults = function() {
             $http.get('http://45.56.104.88:3000/db')
-                .then(function(response){
+                .then(function(response) {
                 	$scope.h3message = "Showing saved searches"
                 	$scope.h3celeb = ""
                     $scope.users = response.data;
                 })
         }
+        
+        // Remove all from Database
+        $scope.removeAll = function() {
+            $http.delete('http://45.56.104.88:3000/db')
+            	.then(function(response) {
+            		setTimeout(function() {
+		    			$scope.viewResults()
+		    		}, 500)
+            	})
+        }  
 
       // Initialize the form and stuff
       $scope.initApp = function () {

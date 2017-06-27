@@ -15,12 +15,16 @@
     <script src="javascripts/logic.js"></script>
     <!-- Local styles -->
     <link rel="stylesheet" href="stylesheets/style.css">
+    <!-- ng-file-upload scripts -->
+    <script src="angular(.min).js"></script>
+	<script src="ng-file-upload-shim(.min).js"></script> 
+	<script src="ng-file-upload(.min).js"></script>
 </head>
 
 <body ng-app="cs591">
 <div ng-controller="cs591ctrl" ng-init="initApp()">
 	<h2>{{h2message}}</h2>
-	<div >
+	<div>
         <form class="form-inline" name="inputForm">
             <div class="form-group">
                 <label class="sr-only" for="formName">Email address</label>
@@ -40,11 +44,14 @@
             </li>
         </ul>
         
+        <div class = "searchButtons">
         <button type="submit" class="btn btn-primary" ng-click="saveResults()">Save Results</button>
-        <button type="submit" class="btn btn-primary" ng-click="viewResults()">View Results</button>
+        <button type="submit" class="btn btn-primary" ng-click="viewResults()">View History</button>
+        <button type="submit" class="btn btn-primary" ng-click="removeAll()">Remove Saves</button>
+        </div>
         
     </div>
-
+    
 </div>    
 </body>
 
