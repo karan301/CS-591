@@ -1,3 +1,5 @@
+// Used to talk to the mongoDB using Mongoose
+
 var express = require('express');
 var router = express.Router();
 

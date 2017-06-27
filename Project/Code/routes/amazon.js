@@ -1,3 +1,5 @@
+// Used to talk to AWS and Rekognition
+
 var express = require('express');
 var router = express.Router();
 

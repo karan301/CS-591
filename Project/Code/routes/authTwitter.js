@@ -1,3 +1,5 @@
+// OAuth authentication with Twitter
+
 //Get a router instance
 const express = require('express')
 const router = express.Router()
@@ -74,10 +76,12 @@ router.get('/logout', function (req, res, next) {
 })
 
 //OAuth Step 1
+// Made this / so it's the index, redirects to the website.
 router.get('/',
     passport.authenticate('twitter'))
 
 //OAuth Step 2
+// Once authenticated, redirect to search.html
 router.get('/callback',
     passport.authenticate('twitter',
         {failureRedirect: '/login',}),

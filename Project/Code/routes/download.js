@@ -1,3 +1,5 @@
+// Downloads image from URL to local
+
 var express = require('express');
 var router = express.Router();
 

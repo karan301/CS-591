@@ -1,4 +1,4 @@
-// https://api.themoviedb.org/3/find/nm0000173?api_key=a4f89685f329255677695e4a6de16766&language=en-US&external_source=imdb_id
+// Used to talk to the TMDB API
 
 var express = require('express');
 var router = express.Router();

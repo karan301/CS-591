@@ -1,3 +1,5 @@
+// Used to upload the local image to S3
+
 var express = require('express');
 var router = express.Router();
 
