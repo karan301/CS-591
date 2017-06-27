@@ -11,9 +11,9 @@ Check out the README files in each subdirectory for more detail.
 
 ### Project
 * Overview
-
 * Deliverables
   * Assignment 1
+* Code
 
 ----
 _Updated on June 9, 2017 by Karan Varindani._
