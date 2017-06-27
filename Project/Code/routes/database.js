@@ -47,8 +47,8 @@ router.post('/', function(req, res, next) {
 // DELETE -- Remove all celebrities
 router.delete('/', function(req, res, next) {
     celeb.remove({}, function(err) { 
-   		console.log('collection removed')
-   		res.send('Collection removed') 
+   		console.log('Collection removed.')
+   		res.send('Collection removed.') 
 	})
 })
 
