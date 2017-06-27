@@ -29,7 +29,7 @@ To configure OAuth and TMDB, you'll need to enter your API and Access Keys in a 
 * Angular used in the front-end: Yep!
 * OAuth works and at least one route is protected: Database is protected, and entire app requires auth.
 * Code is commented: I mean it's pretty good for two binge coding sessions... And there's lengthy documentation!
-* Back-end data stored in mongoDB: Databases saves in `cs591/celebs` and can be retrieved/deleted.
+* Back-end data stored in mongoDB: Database saves in `cs591/celebs` and can be retrieved/deleted.
 
 ----
 
