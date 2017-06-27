@@ -3,7 +3,9 @@
 var express = require('express');
 var router = express.Router();
 
-var api_key = 'a4f89685f329255677695e4a6de16766'
+//Grab config for TMDB
+const tmdbConfig = require('../config/tmdb')
+var api_key = tmdbConfig.API_KEY
 
 var request = require('request-promise');
 var AWS = require('aws-sdk');
