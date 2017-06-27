@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+//Helper for authorization
+const authorized = require('./authCheck')
+
 // Initiate mongoose connection
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/cs591/')
@@ -44,8 +47,8 @@ router.post('/', function(req, res, next) {
     })
 })
 
-// DELETE -- Remove all celebrities
-router.delete('/', function(req, res, next) {
+// DELETE -- Remove all celebrities (needs auth)
+router.delete('/', authorized, function(req, res, next) {
     celeb.remove({}, function(err) { 
    		console.log('Collection removed.')
    		res.send('Collection removed.') 
