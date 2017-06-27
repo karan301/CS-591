@@ -89,10 +89,6 @@ angular.module('cs591', [])
           $scope.authorized = authCookie
       }
       
-      $scope.showLoginForm = function () {
-      	$scope.showLogin = true
-      }
-      
       $scope.doTwitterAuth = function () {
       	var openURL = '/auth/twitter/'
       	$scope.toggleAuth()

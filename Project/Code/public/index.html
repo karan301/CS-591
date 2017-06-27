@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Latest compiled and minified jQuery -->
+    <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Angular (minified) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <!--Controllers for this page/app -->
+    <script src="javascripts/logic.js"></script>
+    <!-- Local styles -->
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body ng-app="cs591">
+<div ng-controller="cs591ctrl" ng-init="initApp()">
+	<div align="right"><img src="/images/master-logo.gif"></div>
+	<h2>{{h2message}}</h2>
+	<div>
+        <form class="form-inline" name="inputForm">
+            <div class="form-group">
+                <label class="sr-only" for="formName">Email address</label>
+                <input type="text" class="form-control" id="formName" placeholder="Enter image URL" ng-model="uri" required>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-disabled="inputForm.$invalid" ng-click="searchImage()">{{buttonMessage}}</button>
+        </form>
+    </div>
+    
+    <p></p>
+    
+    <div class="col-xs-12" style="height:30px;"></div>
+    <div class = "well col-md-6">
+    	{{h3message}} {{h3celeb}}
+        <ul class="list-group">
+            <li ng-controller="listController" class="list-group-item largeText" ng-repeat="user in users">{{user}}
+            </li>
+        </ul>
+        
+        <div class = "searchButtons">
+        <button type="submit" class="btn btn-primary" ng-click="saveResults()">Save Results</button>
+        <button type="submit" class="btn btn-primary" ng-click="viewResults()">View History</button>
+        <button type="submit" class="btn btn-primary" ng-click="removeAll()">Remove Saves</button>
+        </div>
+    </div>
+        
+</div>    
+</body>
+
+</html>
