@@ -7,13 +7,13 @@ Check out the README files in each subdirectory for more detail.
 
 ### Homework
 * [hw1](/Homework/hw1/)
-* hw2
+* [hw2](/Homework/hw2/)
 
 ### Project
-* Overview
-* Deliverables
+* [Overview](/Project/)
+* [Deliverables](/Project/Deliverables/)
   * Assignment 1
-* Code
+* [Code](/Project/Code/) _(Final Project)_
 
 ----
-_Updated on June 9, 2017 by Karan Varindani._
+_Updated on June 27, 2017 by Karan Varindani._
