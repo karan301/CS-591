@@ -11,7 +11,7 @@ The user would need to authenticate with Twitter or Facebook to use the app, and
 * [The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api) 
 
 ## Installation and Setup
-I've added all the `node_modules` to `.gitignore` to keep the app simple, so you'll have to run `npm install` on first run after you clone the directory to get those set up. You'll also need to set up `[AWS CLI](http://docs.aws.amazon.com/rekognition/latest/dg/setup-awscli.html)` to use _Rekognition_. 
+I've added all the `node_modules` to `.gitignore` to keep the app simple, so you'll have to run `npm install` on first run after you clone the directory to get those set up. You'll also need to set up [`AWS CLI`](http://docs.aws.amazon.com/rekognition/latest/dg/setup-awscli.html) to use _Rekognition_. 
 
 To configure OAuth and TMDB, you'll need to enter your API and Access Keys in a config file. I've added sample files that you can rename and fill-in, in the `[/config](/config/)` folder.
 
