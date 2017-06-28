@@ -22,7 +22,7 @@ var upload = function(filename) {
   	var base64data = new Buffer(data, 'binary');
   	
   	s3.putObject({
-    	Bucket: 'cs591-mean',
+    	Bucket: 'cs591-mean', // See variables section of doc on GitHub before changing
     	Key: filename,
     	Body: base64data
   	}, function (resp) {
@@ -33,7 +33,7 @@ var upload = function(filename) {
 } 
 
 router.get('/', function (req, res, next) {
-    let filename = 'utest.jpg'
+    let filename = 'utest.jpg' // See variables section of doc on GitHub before changing
     upload(filename)
     res.send('Image uploaded')
 })

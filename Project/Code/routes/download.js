@@ -25,7 +25,7 @@ var download = function(uri, filename, callback) {
 
 router.post('/', function (req, res, next) {
     let uri = req.body.uri
-    let filename = 'utest.jpg'
+    let filename = 'utest.jpg' // See variables section of doc on GitHub before changing
     
     console.log(uri)
     
