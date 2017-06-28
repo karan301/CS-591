@@ -12,14 +12,14 @@ angular.module('cs591', [])
         $scope.searchImage = function() {
             var downrequest = {
                 method: 'post',
-                url: 'http://45.56.104.88:3000/download',
+                url: 'http://localhost:3000/download',
                 data: {
                     uri: $scope.uri
                 }
             };
             var uprequest = {
             	method: 'get',
-		        url: 'http://45.56.104.88:3000/upload'
+		        url: 'http://localhost:3000/upload'
 		    };
 		    $http(downrequest)
 		    	.then(function(response) {
@@ -36,12 +36,12 @@ angular.module('cs591', [])
         
         // Perform search query
         $scope.getMovies = function() {
-            $http.get('http://45.56.104.88:3000/imdb')
+            $http.get('http://localhost:3000/imdb')
                 .then(function(response) {
                     $scope.users = response.data;
                     $scope.h3message = "Showing results for ";
                 })
-            $http.get('http://45.56.104.88:3000/amazon')
+            $http.get('http://localhost:3000/amazon')
                 .then(function(response){
                     $scope.h3celeb = response.data;
                 })
@@ -51,7 +51,7 @@ angular.module('cs591', [])
         $scope.saveResults = function() {
         	var dbrequest = {
                 method: 'post',
-                url: 'http://45.56.104.88:3000/db',
+                url: 'http://localhost:3000/db',
                 data: {
                     name: $scope.h3celeb
                 }
@@ -61,7 +61,7 @@ angular.module('cs591', [])
         
         // Get list from Database
         $scope.viewResults = function() {
-            $http.get('http://45.56.104.88:3000/db')
+            $http.get('http://localhost:3000/db')
                 .then(function(response) {
                 	$scope.h3message = "Showing saved searches"
                 	$scope.h3celeb = ""
@@ -71,7 +71,7 @@ angular.module('cs591', [])
         
         // Remove all from Database
         $scope.removeAll = function() {
-            $http.delete('http://45.56.104.88:3000/db')
+            $http.delete('http://localhost:3000/db')
             	.then(function(response) {
             		setTimeout(function() {
 		    			$scope.viewResults()
